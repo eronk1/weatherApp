@@ -1,3 +1,11 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-image: url("heavyRain.png");
+    background-size: 50vmax;
+}
 .ClearSky{
     width: 20vmax;
     min-width: 10em;
