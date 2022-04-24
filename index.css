@@ -6,7 +6,23 @@ body{
     background-image: url("heavyRain.png");
     background-size: 50vmax;
 }
+.top{
+    float: left;
+}
 .ClearSky{
     width: 20vmax;
     min-width: 10em;
+}
+.hide{
+    display: none;
+}
+.visible{
+    display: block !important;
+}
+#ClearSkyDay,#ClearSkyNight,#DarkCloud,#heavyRain,#houseDay,#houseNight,#LightCloud{
+    display: none;
+}
+#ClearSkyDay{
+    float: right;
+    height: 20vmax;
 }

@@ -72,6 +72,7 @@ function getDataFromApi(searchTerm, callback) {
 function displayGitHubSearchData(data) {
   $('.js-search-results .weatherCode').text(data.current.weather_code);
   $('.js-search-results .weatherDescription').text(data.current.weather_descriptions);
+
   switch(data.current.weather_code){
     case 113:
     break;
