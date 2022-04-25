@@ -51,6 +51,27 @@
 116	Partly Cloudy	wsymbol_0002_sunny_intervals	wsymbol_0008_clear_sky_night
 113	Clear/Sunny	wsymbol_0001_sunny	wsymbol_0008_clear_sky_night
 */
+function ID(id){
+  return document.getElementById(id);
+}
+function resetPicture(){
+  $('#ClearSkyDay').removeClass("visible");
+  $('#ClearSkyNight').removeClass("visible");
+  $('#DarkCloud').removeClass("visible");
+  $('#heavyRain').removeClass("visible");
+  $('#houseDay').removeClass("visible");
+  $('#houseNight').removeClass("visible");
+  $('#LightCloud').removeClass("visible");
+  $('#ClearSkyDay').addClass("hide");
+  $('#ClearSkyNight').addClass("hide");
+  $('#DarkCloud').addClass("hide");
+  $('#heavyRain').addClass("hide");
+  $('#houseDay').addClass("hide");
+  $('#houseNight').addClass("hide");
+  $('#LightCloud').addClass("hide");
+
+}
+resetPicture();
 const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b';
 
 function getDataFromApi(searchTerm, callback) {
@@ -73,106 +94,158 @@ function displayGitHubSearchData(data) {
   $('.js-search-results .weatherCode').text(data.current.weather_code);
   $('.js-search-results .weatherDescription').text(data.current.weather_descriptions);
 
+
   switch(data.current.weather_code){
     case 113:
+    resetPicture();
+    $('#ClearSkyDay').removeClass("hide");
+    $('#ClearSkyDay').addClass("visible");
     break;
     case 116:
+    resetPicture();
     break;
     case 119:
+    resetPicture();
     break;
     case 122:
+    resetPicture();
     break;
     case 143:
+    resetPicture();
     break;
     case 176:
+    resetPicture();
     break;
     case 179:
+    resetPicture();
     break;
     case 182:
+    resetPicture();
     break;  
     case 185:
+    resetPicture();
     break;
     case 200:
+    resetPicture();
     break;
     case 227:
+    resetPicture();
     break;
     case 230:
+    resetPicture();
     break;  
     case 248:
+    resetPicture();
     break;
     case 260:
+    resetPicture();
     break;
     case 263:
+    resetPicture();
     break;
     case 266:
+    resetPicture();
     break;  
     case 281:
+    resetPicture();
     break;
     case 284:
+    resetPicture();
     break;
     case 293:
+    resetPicture();
     break;
     case 296:
+    resetPicture();
     break;  
     case 299:
+    resetPicture();
     break;
     case 302:
+    resetPicture();
     break;
     case 305:
+    resetPicture();
     break;
     case 308:
+    resetPicture();
     break;
     case 311:
+    resetPicture();
     break;
     case 314:
+    resetPicture();
     break;
     case 317:
+    resetPicture();
     break;
     case 320:
+    resetPicture();
     break;
     case 323:
+    resetPicture();
     break;
     case 326:
+    resetPicture();
     break;
     case 329:
+    resetPicture();
     break;
     case 332:
+    resetPicture();
     break;  
     case 335:
+    resetPicture();
     break;
     case 338:
+    resetPicture();
     break;
     case 350:
+    resetPicture();
     break;
     case 353:
+    resetPicture();
     break;  
     case 356:
+    resetPicture();
     break;
     case 359:
+    resetPicture();
     break;
     case 362:
+    resetPicture();
     break;
     case 365:
+    resetPicture();
     break;  
     case 368:
+    resetPicture();
     break;
     case 371:
+    resetPicture();
     break;
     case 374:
+    resetPicture();
     break;
     case 377:
+    resetPicture();
     break;  
     case 386:
+    resetPicture();
     break;
     case 389:
+    resetPicture();
     break;
     case 392:
+    resetPicture();
     break;
     case 395:
+    resetPicture();
     break;
     default:
       console.log("error has occured");
-      break;
+      resetPicture();
+    break;
   };
 };
 
