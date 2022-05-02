@@ -71,7 +71,6 @@ function resetPicture(){
   $('#LightCloud').addClass("hide");
 
 }
-resetPicture();
 const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b';
 
 function getDataFromApi(searchTerm, callback) {
@@ -93,7 +92,6 @@ function getDataFromApi(searchTerm, callback) {
 function displayGitHubSearchData(data) {
   $('.js-search-results .weatherCode').text(data.current.weather_code);
   $('.js-search-results .weatherDescription').text(data.current.weather_descriptions);
-
 
   switch(data.current.weather_code){
     case 113:

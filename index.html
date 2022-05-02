@@ -10,15 +10,13 @@
     </head>
     <body>
       <div class="top">
-        <h1>Weather App</h1>
-        <h2>Type In A Location</h2>
+        <div class="title">Type In A Location</div>
           <form action="#" class="js-search-form">
             <label for="query"></label>
             <input type="text" class="js-query">
-            <button type="submit">Search</button>
+            <button type="submit" id="buttonSubmit">Search</button>
           </form>
           <!--Hello-->
-          <h2>Results</h2>
           <div class="js-search-results">
             <div class="weatherCode">
 
@@ -35,7 +33,7 @@
         <img src="DarkCloud.png" alt="Failed to load Dark Cloud" id="DarkCloud" class="hide">
         <img src="houseDay.png" alt="Failed to load house" id="houseDay" class="hide">
         <img src="houseNight.png" alt="Failed to load house" id="houseNight" class="hide">
-        <img src="LightCloud.png" alt="Failed to load Light Cloud" id="LightCloud" class="hide">
+        <img src="LightCloud.png" alt="Failed to load Light Cloud" id="LightCloud" class="visible">
         <img src="PartlyCloud.png" alt="Failed to load clouds" id="PartlyCloud" class="hide">
       </section>
       <script src="index.js"></script>

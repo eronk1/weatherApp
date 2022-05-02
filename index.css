@@ -4,10 +4,25 @@ html{
 }
 body{
     background-image: url("heavyRain.png");
+    height: 99%;
+    width: 99%;
     background-size: 50vmax;
+    background-color: rgb(126, 255, 255);
 }
 .top{
     float: left;
+    padding: 1vmax;
+}
+.top .title{
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 3vmax;
+    color: #001e00;
+    font-size: calc(12px + 2.5vw);
+}
+.images{
+    height: 99%;
+    width: 100%;
 }
 .ClearSky{
     width: 20vmax;
@@ -20,7 +35,38 @@ body{
     display: block !important;
 }
 
-#ClearSkyDay{
+#ClearSkyDay {
     float: right;
-    height: 20vmax;
+    width: 20vw;
+    min-width: 8em;
+}
+#LightCloud {
+    width: 99%;
+    position: absolute;
+    margin-top: 8vmax;
+}
+.js-query{
+    background-color: #bad1fb;
+    border-width: 0.5vmax;
+    border-color: rgb(67, 67, 255);
+    height: 3vmax;
+    font-size: 3vmax;
+    width: 23vw;
+    min-width: 5em;
+    color: rgb(0, 0, 193);
+    border-radius: 0.3vmax;
+}
+#buttonSubmit {
+    border-width: 0.5vmax;
+    background: #55eb55;
+    height: 4vmax;
+    float: right;
+    margin-left: 0.5vmax;
+    width: 9vmax;
+    font-size: 2vmax;
+    font-family: monospace;
+    font-weight: 600;
+    border-radius: 0.2vmax;
+    border-color: #009f00;
+    color: rgb(0, 91, 0);
 }
