@@ -54,6 +54,11 @@
 function ID(id){
   return document.getElementById(id);
 }
+/*function ChangeClass(className){
+  return $('#ClearSkyDay').removeClass("hide")
+  $('#ClearSkyDay').addClass("visible");
+}
+*/
 function resetPicture(){
   $('#ClearSkyDay').removeClass("visible");
   $('#ClearSkyNight').removeClass("visible");
@@ -71,7 +76,7 @@ function resetPicture(){
   $('#LightCloud').addClass("hide");
 
 }
-resetPicture();
+
 const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b';
 
 function getDataFromApi(searchTerm, callback) {
@@ -103,6 +108,10 @@ function displayGitHubSearchData(data) {
     break;
     case 116:
     resetPicture();
+    $('#ClearSkyDay').removeClass("hide");
+    $('#ClearSkyDay').addClass("visible");
+    $('#ClearSkyDay').removeClass("hide");
+    $('#ClearSkyDay').addClass("visible");
     break;
     case 119:
     resetPicture();
