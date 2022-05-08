@@ -9,6 +9,13 @@ body{
     background-size: 50vmax;
     background-color: rgb(126, 255, 255);
 }
+.data{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 80%;
+    width: 36%;
+}
 .top{
     float: left;
     padding: 1vmax;
@@ -18,32 +25,35 @@ body{
     font-family: monospace;
     font-size: 3vmax;
     color: #001e00;
-    font-size: calc(12px + 2.5vw);
+    font-size: 3.4vmax;
 }
 .images{
     height: 99%;
-    width: 100%;
+    width: 63%;
+    float: right;
 }
 .ClearSky{
     width: 20vmax;
-    min-width: 10em;
 }
 .hide{
-    display: none !important;
+    display: none;
 }
 .visible{
-    display: block !important;
+    display: block;
 }
 
 #ClearSkyDay {
     float: right;
-    width: 20vw;
-    min-width: 8em;
+    width: 17vw;
+    max-width: 18em;
 }
 #LightCloud {
-    width: 99%;
+    width: 62%;
     position: absolute;
-    margin-top: 8vmax;
+    max-width: 74em;
+    padding-top: min(8em, 7.9vw);
+    right: 0px;
+
 }
 .js-query{
     background-color: #bad1fb;
@@ -51,8 +61,7 @@ body{
     border-color: rgb(67, 67, 255);
     height: 3vmax;
     font-size: 3vmax;
-    width: 23vw;
-    min-width: 5em;
+    width: 23vmax;
     color: rgb(0, 0, 193);
     border-radius: 0.3vmax;
 }
@@ -69,4 +78,34 @@ body{
     border-radius: 0.2vmax;
     border-color: #009f00;
     color: rgb(0, 91, 0);
+}
+#grass{
+    background-color: lightgreen;
+    width: 55%;
+    height: 8%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+#houseDay{
+    width: max(12em,27vw);
+    bottom: 8%;
+    position: absolute;
+    right: 15%;
+
+}
+.data div{
+    background: lightblue;
+    padding: min(0.4vmax,0.3em);
+    margin: min(1.5vmax,20px);
+    width: fit-content;
+    border-radius: 0.2vmax;
+    border-width: 0.5vmax;
+    border-style: ridge;
+    border-color: blue;
+    font-size: min(2vmax,30px);
+    color: darkblue;
+    font-family: monospace;
+    text-align: center;
+    font-weight: 600;
 }
