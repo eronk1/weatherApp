@@ -1,6 +1,6 @@
-
 //http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b&query=New%20York
 //https://weatherstack.com/quickstart
+<<<<<<< HEAD
 /*WeatherCode	Condition	DayIcon	NightIcon
 395	Moderate or heavy snow in area with thunder	wsymbol_0012_heavy_snow_showers	wsymbol_0028_heavy_snow_showers_night
 392	Patchy light snow in area with thunder	wsymbol_0016_thundery_showers	wsymbol_0032_thundery_showers_night
@@ -59,6 +59,8 @@ function ID(id){
   $('#ClearSkyDay').addClass("visible");
 }
 */
+=======
+>>>>>>> 60670864dc1380d94bb1a19caec095ecd64235b7
 function resetPicture(){
   $('#ClearSkyDay').removeClass("visible");
   $('#ClearSkyNight').removeClass("visible");
@@ -67,6 +69,8 @@ function resetPicture(){
   $('#houseDay').removeClass("visible");
   $('#houseNight').removeClass("visible");
   $('#LightCloud').removeClass("visible");
+  $('#PartlyCloud').removeClass("visible");
+  $('#PartlyCloud').addClass("hide");
   $('#ClearSkyDay').addClass("hide");
   $('#ClearSkyNight').addClass("hide");
   $('#DarkCloud').addClass("hide");
@@ -76,7 +80,10 @@ function resetPicture(){
   $('#LightCloud').addClass("hide");
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60670864dc1380d94bb1a19caec095ecd64235b7
 const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b';
 
 function getDataFromApi(searchTerm, callback) {
@@ -91,20 +98,67 @@ function getDataFromApi(searchTerm, callback) {
   };
 
   $.ajax(settings);
-  console.log($.ajax(settings));
 }
 //<img src = "${result.weather_icons[0]}"></img>
 
 function displayGitHubSearchData(data) {
-  $('.js-search-results .weatherCode').text(data.current.weather_code);
-  $('.js-search-results .weatherDescription').text(data.current.weather_descriptions);
-
-
-  switch(data.current.weather_code){
+  let current = data.current;
+  $('#place').text(data.request.query);
+  $('#observation_time').text(current.observation_time);
+  if(current.is_day == "no"){
+    $('#is_day').text("Night");
+  }else{
+    $('#is_day').text("Day");
+  }
+  $('#temperature').text(current.temperature);
+  $('#weather_description').text(current.weather_descriptions);
+  $('#humidity').text(current.humidity);
+  $('#precip').text(current.precip);
+  switch(current.wind_dir){
+    case "N":
+    $('#wind_dir').text("North");
+    break;
+    case "E":
+    $('#wind_dir').text("East");
+    break;
+    case "W":
+    $('#wind_dir').text("West");
+    break;
+    case "S":
+    $('#wind_dir').text("South");
+    break;
+    case "NE":
+    $('#wind_dir').text("Northeast");
+    break;
+    case "NW":
+    $('#wind_dir').text("Northwest");
+    break;
+    case "SW":
+    $('#wind_dir').text("Southwest");
+    break;
+    case "SE":
+    $('#wind_dir').text("Southeast");
+    break;
+    default:
+      $('#wind_dir').text(current.wind_dir);
+      break;
+  }
+  $('#wind_speed').text(current.wind_speed);
+  $(".starting-page").addClass("hide");
+  $(".data").removeClass("hide").addClass("visible");
+  let ClearSkyDay = $('#ClearSkyDay');
+  let ClearSkyNight = $("#ClearSkyNight");
+  let DarkCloud = $("#DarkCloud");
+  let heavyRain = $("#heavyRain");
+  let houseDay = $("#houseNight");
+  let houseNight= $("#LightCloud");
+  let LightCloud= $("#PartlyCloud");
+  switch(current.weather_code){
+    
     case 113:
     resetPicture();
-    $('#ClearSkyDay').removeClass("hide");
-    $('#ClearSkyDay').addClass("visible");
+    ClearSkyDay.removeClass("hide").ClearSkyDay.addClass("visible");
+    houseDay.removeClass("hide").houseDay.addClass("visible");
     break;
     case 116:
     resetPicture();
