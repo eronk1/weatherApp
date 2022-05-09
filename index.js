@@ -79,13 +79,21 @@ function displayGitHubSearchData(data) {
       break;
   }
   $('#wind_speed').text(current.wind_speed);
-  
-
+  $(".starting-page").addClass("hide");
+  $(".data").removeClass("hide").addClass("visible");
+  let ClearSkyDay = $('#ClearSkyDay');
+  let ClearSkyNight = $("#ClearSkyNight");
+  let DarkCloud = $("#DarkCloud");
+  let heavyRain = $("#heavyRain");
+  let houseDay = $("#houseNight");
+  let houseNight= $("#LightCloud");
+  let LightCloud= $("#PartlyCloud");
   switch(current.weather_code){
+    
     case 113:
     resetPicture();
-    $('#ClearSkyDay').removeClass("hide");
-    $('#ClearSkyDay').addClass("visible");
+    ClearSkyDay.removeClass("hide").ClearSkyDay.addClass("visible");
+    houseDay.removeClass("hide").houseDay.addClass("visible");
     break;
     case 116:
     resetPicture();
