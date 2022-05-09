@@ -9,11 +9,14 @@ body{
     background-size: 50vmax;
     background-color: rgb(126, 255, 255);
 }
+p{
+    margin: 0px;
+}
 .data{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    height: 80%;
+    height: 84%;
     width: 36%;
 }
 .top{
@@ -23,9 +26,8 @@ body{
 .top .title{
     font-weight: 700;
     font-family: monospace;
-    font-size: 3vmax;
     color: #001e00;
-    font-size: 3.4vmax;
+    font-size: min(3.4vmax,54px);
 }
 .images{
     height: 99%;
@@ -41,26 +43,43 @@ body{
 .visible{
     display: block;
 }
-
+#place{
+    font-size: min(3vmax,35px);
+    padding: min(0.1vmax,0.1em);
+    color: rgb(0, 0, 0);
+}
 #ClearSkyDay {
     float: right;
     width: 17vw;
     max-width: 18em;
 }
-#LightCloud {
+#ClearSkyNight {
+    float: right;
+    padding-top: 2vmax;
+    padding-right: 3vmax;
+    width: 10vw;
+    max-width: 10em;
+}
+#LightCloud,#DarkCloud {
     width: 62%;
     position: absolute;
     max-width: 74em;
     padding-top: min(8em, 7.9vw);
     right: 0px;
-
+}
+#PartlyCloud {
+    width: 62%;
+    position: absolute;
+    max-width: 74em;
+    padding-top: min(8em, 7.9vw);
+    right: 0px;
 }
 .js-query{
     background-color: #bad1fb;
     border-width: 0.5vmax;
     border-color: rgb(67, 67, 255);
-    height: 3vmax;
-    font-size: 3vmax;
+    height: min(3vmax,50px);
+    font-size: min(3vmax,40px);
     width: 23vmax;
     color: rgb(0, 0, 193);
     border-radius: 0.3vmax;
@@ -68,11 +87,11 @@ body{
 #buttonSubmit {
     border-width: 0.5vmax;
     background: #55eb55;
-    height: 4vmax;
+    height: min(4vmax,74px);
     float: right;
     margin-left: 0.5vmax;
     width: 9vmax;
-    font-size: 2vmax;
+    font-size: min(2vmax,38px);
     font-family: monospace;
     font-weight: 600;
     border-radius: 0.2vmax;
@@ -87,11 +106,19 @@ body{
     bottom: 0px;
     right: 0px;
 }
-#houseDay{
+
+@media only screen and (max-width: 400px) {
+    #houseDay {
+      right: 0% !important;
+    }
+  }
+  
+  
+#houseDay,#houseNight{
     width: max(12em,27vw);
     bottom: 8%;
     position: absolute;
-    right: 15%;
+    right: 11%;
 
 }
 .data div{
