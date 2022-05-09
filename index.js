@@ -1,3 +1,5 @@
+//http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b&query=New%20York
+//https://weatherstack.com/quickstart
 function resetPicture(){
   $('#ClearSkyDay').removeClass("visible");
   $('#ClearSkyNight').removeClass("visible");
