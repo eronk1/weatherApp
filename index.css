@@ -3,11 +3,12 @@ html{
     width: 100%;
 }
 body{
-    background-image: url("heavyRain.png");
+    
     height: 99%;
-    width: 99%;
+    width: 98%;
     background-size: 50vmax;
     background-color: rgb(126, 255, 255);
+    
 }
 p{
     margin: 0px;
@@ -33,6 +34,23 @@ p{
     height: 99%;
     width: 63%;
     float: right;
+}
+.Rain{
+    height: 76%;
+    width:inherit;
+    position: absolute;
+    bottom:0%;
+    background-image: url("heavyRain.png");
+
+}
+
+.Snow{
+    height: 76%;
+    width: inherit;
+    position: absolute;
+    bottom:0%;
+    background-image: url("snowflake.png");
+    background-size: 10vmax;
 }
 .ClearSky{
     width: 20vmax;
@@ -99,17 +117,31 @@ p{
     color: rgb(0, 91, 0);
 }
 #grass{
-    background-color: lightgreen;
+    background-color: rgb(99, 203, 99);
     width: 55%;
+    min-width: 13em;
     height: 8%;
     position: absolute;
     bottom: 0px;
     right: 0px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 475px) {
     #houseDay {
       right: 0% !important;
+    }
+    .Snow{
+        height: 80%;
+    }
+    .Rain{
+        height: 80%;
+    }
+  }
+  @media only screen and (max-width: 912px) {
+    .images {
+      height: 80%;
+      width: 50%;
+      float: right;
     }
   }
   
