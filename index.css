@@ -28,7 +28,7 @@ p{
     font-weight: 700;
     font-family: monospace;
     color: #001e00;
-    font-size: min(3.4vmax,54px);
+    font-size: min(3.4vmax,38px);
 }
 .images{
     height: 99%;
@@ -62,7 +62,7 @@ p{
     display: block;
 }
 #place{
-    font-size: min(3vmax,35px);
+    font-size: min(2vmax,22px);
     padding: min(0.1vmax,0.1em);
     color: rgb(0, 0, 0);
 }
@@ -96,7 +96,7 @@ p{
     background-color: #bad1fb;
     border-width: 0.5vmax;
     border-color: rgb(67, 67, 255);
-    height: min(3vmax,50px);
+    height: min(3vmax,36px);
     font-size: min(3vmax,40px);
     width: 23vmax;
     color: rgb(0, 0, 193);
@@ -105,7 +105,7 @@ p{
 #buttonSubmit {
     border-width: 0.5vmax;
     background: #55eb55;
-    height: min(4vmax,74px);
+    height: min(4vmax,54px);
     float: right;
     margin-left: 0.5vmax;
     width: 9vmax;
@@ -155,14 +155,14 @@ p{
 }
 .data div{
     background: lightblue;
-    padding: min(0.4vmax,0.3em);
-    margin: min(1.5vmax,20px);
+    padding: min(0.2vmax,0.15em);
+    margin: min(1vmax,14px);
     width: fit-content;
     border-radius: 0.2vmax;
     border-width: min(0.5vmax,20px);
     border-style: ridge;
     border-color: blue;
-    font-size: min(1.8vmax,22px);
+    font-size: min(1.5vmax,16px);
     color: darkblue;
     font-family: monospace;
     text-align: center;

@@ -1,24 +1,5 @@
 //http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b&query=New%20York
 //https://weatherstack.com/quickstart
-function resetPicture(){
-  $('#ClearSkyDay').removeClass("visible");
-  $('#ClearSkyNight').removeClass("visible");
-  $('#DarkCloud').removeClass("visible");
-  $('#heavyRain').removeClass("visible");
-  $('#houseDay').removeClass("visible");
-  $('#houseNight').removeClass("visible");
-  $('#LightCloud').removeClass("visible");
-  $('#PartlyCloud').removeClass("visible");
-  $('#PartlyCloud').addClass("hide");
-  $('#ClearSkyDay').addClass("hide");
-  $('#ClearSkyNight').addClass("hide");
-  $('#DarkCloud').addClass("hide");
-  $('#heavyRain').addClass("hide");
-  $('#houseDay').addClass("hide");
-  $('#houseNight').addClass("hide");
-  $('#LightCloud').addClass("hide");
-
-}
 function replaceHide(theClass){
   $(theClass).removeClass("hide");
   $(theClass).addClass("visible");  
@@ -26,6 +7,19 @@ function replaceHide(theClass){
 function replaceVisible(theClass){
   $(theClass).removeClass("visible");
   $(theClass).addClass("hide");
+}
+function resetPicture(){
+  replaceVisible('#ClearSkyDay');
+  replaceVisible('#ClearSkyNight');
+  replaceVisible('#DarkCloud');
+  replaceVisible('.heavyRain');
+  replaceVisible('#houseDay');
+  replaceVisible('#houseNight');
+  replaceVisible('#LightCloud');
+  replaceVisible('#PartlyCloud');
+  replaceVisible('.snowflake');
+  $("#grass").css("background-color","#63CB63");
+
 }
 
 const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b';
@@ -62,21 +56,22 @@ function displayGitHubSearchData(data) {
     if(current.is_day == "yes"){
       replaceHide("#houseDay")
       replaceHide("ClearSkyNight");
-      document.body.style.backgroundColor = "rgb(126, 255, 255)";
+      $("body").css("background-color","rgb(126, 255, 255)");
     }else if(current.is_day == "no"){
       replaceHide("#houseNight");
       replaceHide("#ClearSkyNight");
-      document.body.style.backgroundColor = "rgb(78, 28, 227);";
+      $("body").css("background-color","rgb(78, 28, 227)");
+      
     }else{
       console.log("error has occured loading the DayNight stuff");
     }
     function NoSunDay(){
       if(current.is_day == "yes"){
         replaceHide("#houseDay")
-        document.body.style.backgroundColor = "rgb(126, 255, 255)";
+        $("body").css("background-color","rgb(126, 255, 255)");
       }else if(current.is_day == "no"){
         replaceHide("#houseNight");
-        document.body.style.backgroundColor = "rgb(78, 28, 227);";
+        $("body").css("background-color","rgb(78, 28, 227)");
       }else{
         console.log("error has occured loading the NoSun stuff");
       }
@@ -157,18 +152,30 @@ function displayGitHubSearchData(data) {
     break;
     case 179:
     resetPicture();
+    checkDayFunction();
+    replaceHide("#LightCloud");
     break;
     case 182:
     resetPicture();
+    checkDayFunction();
+    replaceHide("#LightCloud");
     break;  
     case 185:
     resetPicture();
+    checkDayFunction();
+    replaceHide("#LightCloud");
     break;
     case 200:
     resetPicture();
+    checkDayFunction();
+    replaceHide("#LightCloud");
     break;
     case 227:
     resetPicture();
+    checkDayFunction();
+    replaceHide("#LightCloud");
+    replaceHide(".snowFlake");
+    document.getElementById('#grass').backgroundColor = "white";
     break;
     case 230:
     resetPicture();
