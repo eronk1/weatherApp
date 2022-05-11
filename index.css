@@ -79,14 +79,14 @@ p{
     max-width: 10em;
 }
 #LightCloud,#DarkCloud {
-    width: 62%;
+    width: inherit;
     position: absolute;
     max-width: 74em;
     padding-top: min(8em, 7.9vw);
     right: 0px;
 }
 #PartlyCloud {
-    width: 62%;
+    width: inherit;
     position: absolute;
     max-width: 74em;
     padding-top: min(8em, 7.9vw);

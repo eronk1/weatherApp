@@ -153,6 +153,7 @@ function displayGitHubSearchData(data) {
     case 122:
     resetPicture();
     NoSunDay();
+    dayFog();
     replaceHide("#DarkCloud");
     break;
     //Rain mist
@@ -302,79 +303,79 @@ function displayGitHubSearchData(data) {
     break;
     case 317:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     break;
     case 320:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#DarkCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 323:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 326:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 329:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 332:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;  
     case 335:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#DarkCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 338:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#DarkCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 350:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#DarkCloud');
     replaceHide(".Snow");
     //ice pellets
     break;
     case 353:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Rain");
     break;  
@@ -386,46 +387,46 @@ function displayGitHubSearchData(data) {
     break;
     case 359:
     resetPicture();
-    dayDark();
     NoSunDay();
+    dayDark();
     replaceHide('#DarkCloud');
     replaceHide(".Rain");
     break;
     case 362:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     break;
     case 365:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;  
     case 368:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 371:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#DarkCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 374:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     break;
@@ -435,30 +436,30 @@ function displayGitHubSearchData(data) {
     break;  
     case 386:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Rain");
     break;
     case 389:
     resetPicture();
-    dayDark();
     NoSunDay();
+    dayDark();
     replaceHide('#DarkCloud');
     replaceHide(".Rain");
     break;
     case 392:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#LightCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
     break;
     case 395:
     resetPicture();
-    dayFog();
     NoSunDay();
+    dayFog();
     replaceHide('#DarkCloud');
     replaceHide(".Snow");
     $("#grass").css("background-color","white");
