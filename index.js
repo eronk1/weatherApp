@@ -8,6 +8,7 @@ function replaceVisible(theClass){
   $(theClass).removeClass("visible");
   $(theClass).addClass("hide");
 }
+
 function resetPicture(){
   replaceVisible('#ClearSkyDay');
   replaceVisible('#ClearSkyNight');
@@ -56,7 +57,7 @@ function displayGitHubSearchData(data) {
   function checkDayFunction(){
     if(current.is_day == "yes"){
       replaceHide("#houseDay")
-      replaceHide("ClearSkyNight");
+      replaceHide("#ClearSkyDay");
       $("body").css("background-color","rgb(126, 255, 255)");
     }else if(current.is_day == "no"){
       replaceHide("#houseNight");
@@ -66,6 +67,7 @@ function displayGitHubSearchData(data) {
     }else{
       console.log("error has occured loading the DayNight stuff");
     }
+  } 
     function NoSunDay(){
       if(current.is_day == "yes"){
         replaceHide("#houseDay")
@@ -77,7 +79,21 @@ function displayGitHubSearchData(data) {
         console.log("error has occured loading the NoSun stuff");
       }
     }
-  }
+    function dayFog(){
+      if(current.is_day == "yes"){
+        $("body").css("background-color","rgb(225, 241, 250)");//light blueWhite
+      }else if(current.is_day == "no"){
+        $("body").css("background-color","rgb(118, 121, 207)");//light purpleBlue
+      }
+    }
+    function dayDark(){
+      if(current.is_day == "yes"){
+        $("body").css("background-color","rgb(46, 87, 112)");//darkish blue
+      }else if(current.is_day == "no"){
+        $("body").css("background-color","rgb(50, 31, 120)");//darkish purple blue
+      }
+    }
+    
   switch(current.wind_dir){
     case "N":
     $('#wind_dir').text("North");
@@ -177,134 +193,275 @@ function displayGitHubSearchData(data) {
     checkDayFunction();
     replaceHide("#LightCloud");
     replaceHide(".Snow");
-    document.getElementById('#grass').backgroundColor = "white";
+    $("#grass").css("background-color","white");
     break;
     case 230:
     resetPicture();
     NoSunDay();
     replaceHide("#DarkCloud");
     replaceHide(".Snow");
-    document.getElementById('#grass').backgroundColor = "white";
-    $("body").css("background-color","rgb(225, 241, 250)");
+    $("#grass").css("background-color","white");
+    dayFog();
     break;  
     case 248:
     resetPicture();
     NoSunDay();
     replaceHide('#LightCloud');
-    $("body").css("background-color","rgb(225, 241, 250)");
+    dayFog();
     break;
     case 260:
     resetPicture();
     NoSunDay();
     replaceHide('#LightCloud');
     replaceHide(".Snow")
-    $("body").css("background-color","rgb(225, 241, 250)");
+    dayFog();
     break;
     case 263:
     resetPicture();
     NoSunDay();
     replaceHide('#LightCloud');
-    $("body").css("background-color","rgb(225, 241, 250)");
+    dayFog();
     replaceHide(".Rain");
     break;
     case 266:
     resetPicture();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    dayFog();
+    replaceHide(".Rain");
     break;  
     case 281:
     resetPicture();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    dayFog();
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 284:
     resetPicture();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    dayFog();
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 293:
     resetPicture();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
     break;
     case 296:
     resetPicture();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
     break;  
     case 299:
     resetPicture();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
     break;
     case 302:
     resetPicture();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
     break;
     case 305:
     resetPicture();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Rain");
+    dayDark();
     break;
     case 308:
     resetPicture();
+    dayDark();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Rain");
     break;
     case 311:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
+    $("#grass").css("background-color","white");
     break;
     case 314:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Rain");
+    $("#grass").css("background-color","white");
     break;
     case 317:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
     break;
     case 320:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 323:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 326:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 329:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 332:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;  
     case 335:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 338:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 350:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Snow");
+    //ice pellets
     break;
     case 353:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
     break;  
     case 356:
     resetPicture();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Rain");
     break;
     case 359:
     resetPicture();
+    dayDark();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Rain");
     break;
     case 362:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
     break;
     case 365:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;  
     case 368:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 371:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 374:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
     break;
     case 377:
     resetPicture();
+    $("#grass").css("background-color","white");
     break;  
     case 386:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Rain");
     break;
     case 389:
     resetPicture();
+    dayDark();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Rain");
     break;
     case 392:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#LightCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     case 395:
     resetPicture();
+    dayFog();
+    NoSunDay();
+    replaceHide('#DarkCloud');
+    replaceHide(".Snow");
+    $("#grass").css("background-color","white");
     break;
     default:
       console.log("error has occured");
