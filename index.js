@@ -12,12 +12,12 @@ function resetPicture(){
   replaceVisible('#ClearSkyDay');
   replaceVisible('#ClearSkyNight');
   replaceVisible('#DarkCloud');
-  replaceVisible('.heavyRain');
+  replaceVisible('.Rain');
   replaceVisible('#houseDay');
   replaceVisible('#houseNight');
   replaceVisible('#LightCloud');
   replaceVisible('#PartlyCloud');
-  replaceVisible('.snowflake');
+  replaceVisible('.Snow');
   $("#grass").css("background-color","#63CB63");
 
 }

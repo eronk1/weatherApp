@@ -96,8 +96,8 @@ p{
     background-color: #bad1fb;
     border-width: 0.5vmax;
     border-color: rgb(67, 67, 255);
-    height: min(3vmax,36px);
-    font-size: min(3vmax,40px);
+    height: auto;
+    font-size: min(2vmax,40px);
     width: 23vmax;
     color: rgb(0, 0, 193);
     border-radius: 0.3vmax;
@@ -105,7 +105,7 @@ p{
 #buttonSubmit {
     border-width: 0.5vmax;
     background: #55eb55;
-    height: min(4vmax,54px);
+    height: auto;
     float: right;
     margin-left: 0.5vmax;
     width: 9vmax;
