@@ -24,20 +24,61 @@ function resetPicture(){
 
 }
 
-const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b';
+const GITHUB_SEARCH_URL = 'http://api.weatherstack.com/current?access_key=7e05fb3d3c5494354bac6310f5fa6504';
 
 function getDataFromApi(searchTerm, callback) {
-  const settings = {
-    url: GITHUB_SEARCH_URL,
-    data: {      
-      query: `${searchTerm}`
-    },
-    dataType: 'json',
-    type: 'GET',
-    success: callback
-  };
+  // const settings = {
+  //   url: GITHUB_SEARCH_URL,
+  //   data: {      
+  //     query: `${searchTerm}`
+  //   },
+  //   dataType: 'json',
+  //   type: 'GET',
+  //   success: callback
+  // };
 
-  $.ajax(settings);
+  // $.ajax(settings);
+  callback({
+    "request": {
+        "type": "City",
+        "query": "Glendale, United States of America",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "Glendale",
+        "country": "United States of America",
+        "region": "Arizona",
+        "lat": "33.539",
+        "lon": "-112.185",
+        "timezone_id": "America/Phoenix",
+        "localtime": "2024-06-07 13:05",
+        "localtime_epoch": 1717765500,
+        "utc_offset": "-7.0"
+    },
+    "current": {
+        "observation_time": "08:05 PM",
+        "temperature": 38,
+        "weather_code": 116,
+        "weather_icons": [
+            "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
+        ],
+        "weather_descriptions": [
+            "Partly cloudy"
+        ],
+        "wind_speed": 4,
+        "wind_degree": 180,
+        "wind_dir": "S",
+        "pressure": 1008,
+        "precip": 0,
+        "humidity": 12,
+        "cloudcover": 25,
+        "feelslike": 37,
+        "uv_index": 9,
+        "visibility": 16,
+        "is_day": "yes"
+    }
+})
 }
 //<img src = "${result.weather_icons[0]}"></img>
 
