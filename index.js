@@ -38,47 +38,7 @@ function getDataFromApi(searchTerm, callback) {
   // };
 
   // $.ajax(settings);
-  callback({
-    "request": {
-        "type": "City",
-        "query": "Glendale, United States of America",
-        "language": "en",
-        "unit": "m"
-    },
-    "location": {
-        "name": "Glendale",
-        "country": "United States of America",
-        "region": "Arizona",
-        "lat": "33.539",
-        "lon": "-112.185",
-        "timezone_id": "America/Phoenix",
-        "localtime": "2024-06-07 13:05",
-        "localtime_epoch": 1717765500,
-        "utc_offset": "-7.0"
-    },
-    "current": {
-        "observation_time": "08:05 PM",
-        "temperature": 38,
-        "weather_code": 116,
-        "weather_icons": [
-            "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
-        ],
-        "weather_descriptions": [
-            "Partly cloudy"
-        ],
-        "wind_speed": 4,
-        "wind_degree": 180,
-        "wind_dir": "S",
-        "pressure": 1008,
-        "precip": 0,
-        "humidity": 12,
-        "cloudcover": 25,
-        "feelslike": 37,
-        "uv_index": 9,
-        "visibility": 16,
-        "is_day": "yes"
-    }
-})
+  callback(getRandomWeatherData(searchTerm))
 }
 //<img src = "${result.weather_icons[0]}"></img>
 
@@ -524,3 +484,110 @@ function watchSubmit() {
 };
 
 $(watchSubmit);
+
+
+function getRandomWeatherData(searchTerm) {
+  const weatherCodes = [
+      { code: 395, description: "Moderate or heavy snow in area with thunder", icon: "wsymbol_0012_heavy_snow_showers" },
+      { code: 392, description: "Patchy light snow in area with thunder", icon: "wsymbol_0016_thundery_showers" },
+      { code: 389, description: "Moderate or heavy rain in area with thunder", icon: "wsymbol_0024_thunderstorms" },
+      { code: 386, description: "Patchy light rain in area with thunder", icon: "wsymbol_0016_thundery_showers" },
+      { code: 377, description: "Moderate or heavy showers of ice pellets", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 374, description: "Light showers of ice pellets", icon: "wsymbol_0013_sleet_showers" },
+      { code: 371, description: "Moderate or heavy snow showers", icon: "wsymbol_0012_heavy_snow_showers" },
+      { code: 368, description: "Light snow showers", icon: "wsymbol_0011_light_snow_showers" },
+      { code: 365, description: "Moderate or heavy sleet showers", icon: "wsymbol_0013_sleet_showers" },
+      { code: 362, description: "Light sleet showers", icon: "wsymbol_0013_sleet_showers" },
+      { code: 359, description: "Torrential rain shower", icon: "wsymbol_0018_cloudy_with_heavy_rain" },
+      { code: 356, description: "Moderate or heavy rain shower", icon: "wsymbol_0010_heavy_rain_showers" },
+      { code: 353, description: "Light rain shower", icon: "wsymbol_0009_light_rain_showers" },
+      { code: 350, description: "Ice pellets", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 338, description: "Heavy snow", icon: "wsymbol_0020_cloudy_with_heavy_snow" },
+      { code: 335, description: "Patchy heavy snow", icon: "wsymbol_0012_heavy_snow_showers" },
+      { code: 332, description: "Moderate snow", icon: "wsymbol_0020_cloudy_with_heavy_snow" },
+      { code: 329, description: "Patchy moderate snow", icon: "wsymbol_0020_cloudy_with_heavy_snow" },
+      { code: 326, description: "Light snow", icon: "wsymbol_0011_light_snow_showers" },
+      { code: 323, description: "Patchy light snow", icon: "wsymbol_0011_light_snow_showers" },
+      { code: 320, description: "Moderate or heavy sleet", icon: "wsymbol_0019_cloudy_with_light_snow" },
+      { code: 317, description: "Light sleet", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 314, description: "Moderate or Heavy freezing rain", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 311, description: "Light freezing rain", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 308, description: "Heavy rain", icon: "wsymbol_0018_cloudy_with_heavy_rain" },
+      { code: 305, description: "Heavy rain at times", icon: "wsymbol_0010_heavy_rain_showers" },
+      { code: 302, description: "Moderate rain", icon: "wsymbol_0018_cloudy_with_heavy_rain" },
+      { code: 299, description: "Moderate rain at times", icon: "wsymbol_0010_heavy_rain_showers" },
+      { code: 296, description: "Light rain", icon: "wsymbol_0017_cloudy_with_light_rain" },
+      { code: 293, description: "Patchy light rain", icon: "wsymbol_0017_cloudy_with_light_rain" },
+      { code: 284, description: "Heavy freezing drizzle", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 281, description: "Freezing drizzle", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 266, description: "Light drizzle", icon: "wsymbol_0017_cloudy_with_light_rain" },
+      { code: 263, description: "Patchy light drizzle", icon: "wsymbol_0009_light_rain_showers" },
+      { code: 260, description: "Freezing fog", icon: "wsymbol_0007_fog" },
+      { code: 248, description: "Fog", icon: "wsymbol_0007_fog" },
+      { code: 230, description: "Blizzard", icon: "wsymbol_0020_cloudy_with_heavy_snow" },
+      { code: 227, description: "Blowing snow", icon: "wsymbol_0019_cloudy_with_light_snow" },
+      { code: 200, description: "Thundery outbreaks in nearby", icon: "wsymbol_0016_thundery_showers" },
+      { code: 185, description: "Patchy freezing drizzle nearby", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 182, description: "Patchy sleet nearby", icon: "wsymbol_0021_cloudy_with_sleet" },
+      { code: 179, description: "Patchy snow nearby", icon: "wsymbol_0013_sleet_showers" },
+      { code: 176, description: "Patchy rain nearby", icon: "wsymbol_0009_light_rain_showers" },
+      { code: 143, description: "Mist", icon: "wsymbol_0006_mist" },
+      { code: 122, description: "Overcast", icon: "wsymbol_0004_black_low_cloud" },
+      { code: 119, description: "Cloudy", icon: "wsymbol_0003_white_cloud" },
+      { code: 116, description: "Partly Cloudy", icon: "wsymbol_0002_sunny_intervals" },
+      { code: 113, description: "Clear/Sunny", icon: "wsymbol_0001_sunny" }
+  ];
+
+  // Function to get a random integer between min and max (inclusive)
+  function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // Randomly select a weather code
+  const randomWeather = weatherCodes[getRandomInt(0, weatherCodes.length - 1)];
+
+  // Create the response object
+  const response = {
+      "request": {
+          "type": "City",
+          "query": searchTerm,
+          "language": "en",
+          "unit": "m"
+      },
+      "location": {
+          "name": searchTerm,
+          "country": "United States of America",
+          "region": "Arizona",
+          "lat": "33.539",
+          "lon": "-112.185",
+          "timezone_id": "America/Phoenix",
+          "localtime": "2024-06-07 13:05",
+          "localtime_epoch": 1717765500,
+          "utc_offset": "-7.0"
+      },
+      "current": {
+          "observation_time": "08:05 PM",
+          "temperature": getRandomInt(-10, 40),  // Random temperature for variety
+          "weather_code": randomWeather.code,
+          "weather_icons": [
+              `https://cdn.worldweatheronline.com/images/wsymbols01_png_64/${randomWeather.icon}.png`
+          ],
+          "weather_descriptions": [
+              randomWeather.description
+          ],
+          "wind_speed": getRandomInt(0, 100),  // Random wind speed for variety
+          "wind_degree": getRandomInt(0, 360),  // Random wind degree for variety
+          "wind_dir": ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"][getRandomInt(0, 15)],
+          "pressure": getRandomInt(950, 1050),  // Random pressure for variety
+          "precip": getRandomInt(0, 50),  // Random precipitation for variety
+          "humidity": getRandomInt(0, 100),  // Random humidity for variety
+          "cloudcover": getRandomInt(0, 100),  // Random cloud cover for variety
+          "feelslike": getRandomInt(-10, 40),  // Random feels like temperature for variety
+          "uv_index": getRandomInt(0, 10),  // Random UV index for variety
+          "visibility": getRandomInt(0, 20),  // Random visibility for variety
+          "is_day": getRandomInt(0, 1) ? "yes" : "no"
+      }
+  };
+
+  return response;
+}
