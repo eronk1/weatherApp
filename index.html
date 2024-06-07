@@ -10,32 +10,38 @@
     </head>
     <body>
       <div class="top">
-        <h1>Weather App</h1>
-        <h2>Type In A Location</h2>
+        <div class="title">Type In A Location</div>
           <form action="#" class="js-search-form">
             <label for="query"></label>
             <input type="text" class="js-query">
-            <button type="submit">Search</button>
+            <button type="submit" id="buttonSubmit">Search</button>
           </form>
           <!--Hello-->
-          <h2>Results</h2>
-          <div class="js-search-results">
-            <div class="weatherCode">
 
-            </div>
-            
-            <div class="weatherDescription">
-
-            </div>
-          </div>
         </div>
-      <section>
+        <div class="starting-page">Search Up a City!</div>
+        <div class="data hide">
+          <div id="place">1</div>
+          <div><p>Observation Time: <span id="observation_time"></span></div>
+          <div>Time: <span id="is_day"></span></div>
+          <div>Temperature: <span id="temperature"></span> Celcius</div>
+          <div>Weather: <span id="weather_description"></span></div>
+          <div>Humidity: <span id="humidity"></span>%</div>
+          <div>Precipitation: <span id="precip"></span>%</div>
+          <div>Wind Direction: <span id="wind_dir"></span></div>
+          <div>Wind Speed: <span id="wind_speed"></span>mph</div>
+        </div>
+      <section class="images">
+        <div class="Rain hide"></div>
+        <div class="Snow hide"></div>
+        <div id="grass"></div>
         <img src="ClearSkyDay.png" alt="Failed to load sun" id="ClearSkyDay" class="visible">
-        <img src="ClearSkyNight.png" alt="Failed to load Moon" id="ClearSkyNight">
-        <img src="DarkCloud.png" alt="Failed to load Dark Cloud" id="DarkCloud">
-        <img src="houseDay.png" alt="Failed to load house" id="houseDay">
-        <img src="houseNight.png" alt="Failed to load house" id="houseNight">
-        <img src="LightCloud.png" alt="Failed to load Light Cloud" id="LightCloud">
+        <img src="ClearSkyNight.png" alt="Failed to load Moon" id="ClearSkyNight" class="hide">
+        <img src="DarkCloud.png" alt="Failed to load Dark Cloud" id="DarkCloud" class="hide">
+        <img src="houseDay.png" alt="Failed to load house" id="houseDay" class="visible">
+        <img src="houseNight.png" alt="Failed to load house" id="houseNight" class="hide">
+        <img src="LightCloud.png" alt="Failed to load Light Cloud" id="LightCloud" class="visible">
+        <img src="PartlyCloud.png" alt="Failed to load clouds" id="PartlyCloud" class="hide">
       </section>
       <script src="index.js"></script>
     </body>
