@@ -1,5 +1,6 @@
 //http://api.weatherstack.com/current?access_key=5045986191835efffc7e038952d4cf9b&query=New%20York
 //https://weatherstack.com/quickstart
+let title = document.getElementById('title');
 function replaceHide(theClass){
   $(theClass).removeClass("hide");
   $(theClass).addClass("visible");  
@@ -21,6 +22,7 @@ function resetPicture(){
   replaceVisible('.Snow');
   $("#grass").css("background-color","#63CB63");
   $("body").css("background-color","rgb(126, 255, 255)");
+  title.style.color = 'black';
 
 }
 
@@ -60,10 +62,12 @@ function displayGitHubSearchData(data) {
       replaceHide("#houseDay")
       replaceHide("#ClearSkyDay");
       $("body").css("background-color","rgb(126, 255, 255)");
+      title.style.color = 'black';
     }else if(current.is_day == "no"){
       replaceHide("#houseNight");
       replaceHide("#ClearSkyNight");
       $("body").css("background-color","rgb(78, 28, 227)");
+      title.style.color = 'white';
       
     }else{
       console.log("error has occured loading the DayNight stuff");
@@ -73,9 +77,11 @@ function displayGitHubSearchData(data) {
       if(current.is_day == "yes"){
         replaceHide("#houseDay")
         $("body").css("background-color","rgb(126, 255, 255)");
+        title.style.color = 'black';
       }else if(current.is_day == "no"){
         replaceHide("#houseNight");
         $("body").css("background-color","rgb(78, 28, 227)");
+        title.style.color = 'white';
       }else{
         console.log("error has occured loading the NoSun stuff");
       }
@@ -83,15 +89,19 @@ function displayGitHubSearchData(data) {
     function dayFog(){
       if(current.is_day == "yes"){
         $("body").css("background-color","rgb(225, 241, 250)");//light blueWhite
+        title.style.color = 'black';
       }else if(current.is_day == "no"){
         $("body").css("background-color","rgb(118, 121, 207)");//light purpleBlue
+        title.style.color = 'white';
       }
     }
     function dayDark(){
       if(current.is_day == "yes"){
         $("body").css("background-color","rgb(46, 87, 112)");//darkish blue
+        title.style.color = 'white';
       }else if(current.is_day == "no"){
         $("body").css("background-color","rgb(50, 31, 120)");//darkish purple blue
+        title.style.color = 'white';
       }
     }
     
@@ -550,7 +560,7 @@ function getRandomWeatherData(searchTerm) {
   const response = {
       "request": {
           "type": "City",
-          "query": searchTerm,
+          "query": `${searchTerm}, United States of America`,
           "language": "en",
           "unit": "m"
       },
